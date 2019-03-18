@@ -13,8 +13,7 @@ pipeline {
         stage('Dependency Check') {
             
             steps {
-                 dependencyCheckAnalyzer datadir: 'data', 
-                     true, hintsFile: '', includeCsvReports: false, includeHtmlReports: false, includeJsonReports: false, outdir: '', scanpath: '', skipOnScmChange: false, skipOnUpstreamChange: false, suppressionFile: '', zipExtensions: ''
+                 dependencyCheckAnalyzer datadir: 'data', hintsFile: '', includeCsvReports: false, includeHtmlReports: false, includeJsonReports: false, outdir: '', scanpath: '', skipOnScmChange: false, skipOnUpstreamChange: false, suppressionFile: '', zipExtensions: ''
 
                  dependencyCheckPublisher canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''
     
