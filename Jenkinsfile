@@ -1,14 +1,21 @@
-pipeline
-{
- agent any 
-  stages
-  {
-  stage ('Build')
-    {
-      steps{
-      sh '/usr/share/maven clean install'
-      }
-    }
+pipeline {
+    agent any
 
-  }
-} 
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
