@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 
-                 sh '/usr/share/maven 3.0.5 clean install'
+                 sh '/usr/share/maven  clean install'
 
             }
         }
