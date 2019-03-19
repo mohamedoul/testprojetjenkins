@@ -13,9 +13,9 @@ pipeline {
         stage('Dependency Check') {
             
             steps {
-                 dependencyCheckAnalyzer datadir: 'data', hintsFile: '', includeCsvReports: false, includeHtmlReports: false, includeJsonReports: false, outdir: '', scanpath: '', skipOnScmChange: false, skipOnUpstreamChange: false, suppressionFile: '', zipExtensions: ''
+                 dependencyCheckAnalyzer datadir: 'data', hintsFile: '', includeCsvReports: false, includeHtmlReports: false, isAutoupdateDisabled: false, includeJsonReports: false, outdir: '', scanpath: '', skipOnScmChange: false, skipOnUpstreamChange: false, suppressionFile: '', zipExtensions: ''
 
-                 dependencyCheckPublisher canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''
+                 dependencyCheckPublisher canComputeNew: false , defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''
     
                  archiveArtifacts allowEmptyArchive: true, artifacts: '**/dependency-check-report.*', onlyIfSuccessful: true
             }
