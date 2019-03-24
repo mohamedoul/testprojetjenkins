@@ -8,11 +8,9 @@ pipeline {
         }
     }
     post {
-        always {
-            junit '**/target/*.xml'
-        }
+
         failure {
-            mail to: jesuisdelaplanetemars3@example.com, subject: 'The Pipeline failed '
+            mail to: jesuisdelaplanetemars3@example.com, subject: 'The Pipeline failed'
         }
     }
 }
