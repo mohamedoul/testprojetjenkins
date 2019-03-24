@@ -1,26 +1,25 @@
+Jenkinsfile (Declarative Pipeline)
 pipeline {
     agent any
 
     stages {
         stage('Build') {
             steps {
-                
-                  sh 'mvn -Dmaven.test.failure.ignore=true install'
-
+                echo 'Building..'
             }
         }
-        
-        stage('Dependency Check') {
-            
+        stage('Test') {
             steps {
-                 dependencyCheckAnalyzer datadir: 'data', hintsFile: '', includeCsvReports: false, includeHtmlReports: false, isAutoupdateDisabled: false, includeVulnReports: false, includeJsonReports: false, outdir: '', scanpath: '', skipOnScmChange: false, skipOnUpstreamChange: false, suppressionFile: '', zipExtensions: ''
-
-                 dependencyCheckPublisher canComputeNew: false , defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''
-    
-                 archiveArtifacts allowEmptyArchive: true, artifacts: '**/dependency-check-report.*', onlyIfSuccessful: true
+                echo 'Testing..'
             }
         }
-        
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
         
         
         stage('Test') {
